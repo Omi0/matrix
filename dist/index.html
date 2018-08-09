@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Noble Digital Agency</title><base href="/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><link href="//fonts.googleapis.com/css?family=VT323" rel="stylesheet"><style>* {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, #fff 0%, #aaa 100%) no-repeat;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    body {
+      text-align: center;
+      display: table;
+      background: black;
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      font-family: "VT323", monospace;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .app-loaded #c {
+      opacity: 0;
+    }</style><link href="styles.a913f665e0873c89fd2a.bundle.css" rel="stylesheet"/></head><body><div id="app-loader"><canvas id="c" style="transition: opacity 2500ms ease-in-out;"></canvas><script>var c = document.getElementById("c");
+      var ctx = c.getContext("2d");
+
+      c.height = window.innerHeight;
+      c.width = window.innerWidth;
+
+      var matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+      matrix = matrix.split("");
+
+      var font_size = 18;
+      var columns = c.width / font_size;
+      var drops = [];
+      for (var x = 0; x < columns; x++)
+        drops[x] = 1;
+
+      function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+        ctx.fillRect(0, 0, c.width, c.height);
+
+        ctx.fillStyle = "#0F0";
+        ctx.font = font_size + "px VT323";
+        for (var i = 0; i < drops.length; i++) {
+          var text = matrix[Math.floor(Math.random() * matrix.length)];
+          ctx.fillText(text, i * font_size, drops[i] * font_size);
+          if (Math.random() > 0.975)
+            drops[i] = 0;
+          drops[i]++;
+        }
+      }
+      setInterval(draw, 35);</script></div><app-root></app-root><script type="text/javascript" src="inline.318b50c57b4eba3d437b.bundle.js"></script><script type="text/javascript" src="polyfills.9fc3b118d21958673cf7.bundle.js"></script><script type="text/javascript" src="scripts.b29db525ee7768b5ac48.bundle.js"></script><script type="text/javascript" src="main.d730051241e272092675.bundle.js"></script></body></html>

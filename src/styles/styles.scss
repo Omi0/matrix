@@ -1,0 +1,9 @@
+@import "~styles/variables.scss";
+
+body {
+  overflow: hidden;
+  background: $body-bg;
+  color: $font-color;
+  font-family: $font-family-sans-serif;
+  text-shadow: 1px 1px 4px #2b6900;
+}

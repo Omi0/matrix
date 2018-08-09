@@ -1,0 +1,82 @@
+$star-length: 5;
+$brand-color: #00b67a;
+$text-color: #191919;
+$background-color: #ffffff;
+$animation-speed: 0.3s;
+$font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+$logo-image: "http://cdn.trustpilot.net/brand-assets/1.7.0/logo-black.svg";
+
+:host {
+  * {
+    font-family: $font-family;
+    color: $text-color;
+    background: $background-color;
+    text-shadow: none;
+    font-size: 20px;
+  }
+
+  .stars {
+    display: flex;
+    img {
+      width: 100%;
+      height: 100%;
+      min-width: 0;
+      padding: 1%;
+    }
+  }
+
+  .info {
+    white-space: nowrap;
+    margin: 0 1%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    .logo {
+      display: inline-block;
+      width: 49%;
+      height: 2em;
+      background-image: url($logo-image);
+      background-repeat: no-repeat;
+      background-position: left center;
+      vertical-align: bottom;
+    }
+
+    .based-on {
+      display: inline-block;
+      vertical-align: bottom;
+      font-size: 1.2em;
+      width: 50%;
+      text-align: right;
+      a {
+        color: $brand-color;
+      }
+    }
+  }
+  .reviews {
+    padding: 2em 0;
+    position: relative;
+    .review {
+      .review-title {
+        font-weight: 700;
+        margin-bottom: 1em;
+      }
+      .review-body {
+        font-size: 0.75em;
+        margin-bottom: 1em;
+      }
+      .review-footer {
+        font-size: 0.75em;
+        white-space: nowrap;
+        color: lighten($text-color, 50%);
+        & > * {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 2em;
+        }
+        .rate {
+          width: 30%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<div class="stars">
+    <img *repeat="star.length; let i" [src]="i <= midRate ? star.full : star.empty">
+</div>
+<div class="info">
+    <div class="logo"></div>
+    <div class="based-on">Based on
+        <a [href]="base_url" target="_blank">{{ reviews.length }} reviews</a>
+    </div>
+</div>
+<div class="reviews" *ngIf="activeReview != null">
+    <div class="review" [@reviewsAnimation]="activeReview">
+        <div class="review-title">{{ reviews[activeReview].reviewTitle }}</div>
+        <div class="review-body">{{ reviews[activeReview].reviewBody }}</div>
+        <div class="review-footer">
+            <img class="rate" [src]="star[reviews[activeReview].starRating]">
+            <div class="author">{{ reviews[activeReview].fullName }}</div>
+            <div class="location">{{ reviews[activeReview].location }}</div>
+        </div>
+    </div>
+</div>

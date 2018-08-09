@@ -1,0 +1,25 @@
+@import "~styles/variables.scss";
+
+:host {
+  font-size: 180%;
+  button {
+    background: $font-color;
+    padding: 1em 2em;
+    border: none;
+    margin: 2rem;
+  }
+  a {
+    padding: 1em;
+    border: 1px solid;
+    max-width: 500px;
+    margin: 2em auto;
+    display: block;
+    color: inherit;
+  }
+  .widget-wrapper {
+    background: #fff;
+    padding: 4em;
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+}
